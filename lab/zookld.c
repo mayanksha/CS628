@@ -172,7 +172,7 @@ pid_t launch_svc(CONF *conf, const char *name)
 
     signal(SIGCHLD, SIG_DFL);
     signal(SIGPIPE, SIG_DFL);
-
+  warnx( "execv %s %s", argv[0], argv[1] );
     execv(argv[0], argv);
     err(1, "execv %s %s", argv[0], argv[1]);
 }

@@ -1,5 +1,4 @@
 #!/bin/bash
-
 HOST=localhost
 PORT=8080
 STRACELOG=/tmp/strace.log
@@ -18,12 +17,13 @@ FAIL="\033[1;31mFAIL\033[m"
 cleanup
 trap cleanup EXIT
 
+echo "launching server"
 # launch the server. strace so we can see SEGVs.
 strace -f -e none -o "$STRACELOG" ./clean-env.sh ./zookld $1 &> /dev/null &
 need_cleanup=1
 
 # wait until we can connect
-sleep 1
+sleep 2 
 if ! curl --connect-timeout 10 -s $HOST:$PORT &>/dev/null ; then
   echo "failed to connect to $HOST:$PORT"
   exit 1

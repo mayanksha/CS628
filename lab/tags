@@ -1,0 +1,290 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/45968eff/
+#header	zoobar/media/zoobar.css	/^#header {$/;"	i
+#login	zoobar/media/zoobar.css	/^#login { background-image: url(lion_sleeping.jpg); font-weight: bold; }$/;"	i
+#login table	zoobar/media/zoobar.css	/^#login table { margin: 18px 30px 0px 30px; }$/;"	s
+#main	zoobar/media/zoobar.css	/^#main { background-image: url(lion_awake.jpg); }$/;"	i
+#main table	zoobar/media/zoobar.css	/^#main table {$/;"	s
+#main td	zoobar/media/zoobar.css	/^#main td { text-align: center; }$/;"	s
+%	Makefile	/^run-shellcode: %: %.o$/;"	t
+%	Makefile	/^zookfs-withssp zookd-withssp: %: %.o http-withssp.o$/;"	t
+%	Makefile	/^zookld zookd zookfs: %: %.o http.o$/;"	t
+%-exstack	Makefile	/^%-exstack: %$/;"	t
+%-nxstack	Makefile	/^%-nxstack: %$/;"	t
+%-withssp.o	Makefile	/^%-withssp.o: %.c$/;"	t
+%.bin	Makefile	/^%.bin: %.o$/;"	t
+%.o	Makefile	/^%.o: %.c$/;"	t
+.centerpiece	zoobar/media/zoobar.css	/^.centerpiece {$/;"	c
+.centerpiece td	zoobar/media/zoobar.css	/^.centerpiece td { height: 0px; } $/;"	s
+.centerpiece td.main	zoobar/media/zoobar.css	/^.centerpiece td.main { height: 130px; } $/;"	c
+.centerpiece textarea	zoobar/media/zoobar.css	/^.centerpiece textarea { width: 90%; height: 100px; }$/;"	s
+.footer	zoobar/media/zoobar.css	/^.footer { text-align: center; }$/;"	c
+.log	zoobar/media/zoobar.css	/^.log {$/;"	c
+.profilecontainer	zoobar/media/zoobar.css	/^.profilecontainer { $/;"	c
+.warning	zoobar/media/zoobar.css	/^.warning { color: #A00000; font-weight: bold; }$/;"	c
+ARGV	shellcode.S	/^#define ARGV	/;"	d	file:
+ASFLAGS	Makefile	/^ASFLAGS := -m32$/;"	m
+AuthRpcServer	zoobar/auth-server.py	/^class AuthRpcServer(rpclib.RpcServer):$/;"	c
+CFLAGS	Makefile	/^CFLAGS  := -m32 -g -std=c99 -Wall -Werror -D_GNU_SOURCE$/;"	m
+ENVP	shellcode.S	/^#define ENVP	/;"	d	file:
+EchoRpcServer	zoobar/echo-server.py	/^class EchoRpcServer(rpclib.RpcServer):$/;"	c
+HMAC	zoobar/pbkdf2.py	/^    import hmac as HMAC$/;"	I
+Head	check-bugs.py	/^Head = collections.namedtuple("Head", "file line")$/;"	v
+LDFLAGS	Makefile	/^LDFLAGS := -m32$/;"	m
+LDLIBS	Makefile	/^LDLIBS  := -lcrypto$/;"	m
+MAX_GIDS	zookld.c	/^#define MAX_GIDS /;"	d	file:
+MAX_SERVICES	zookd.c	/^#define MAX_SERVICES /;"	d	file:
+MAX_SERVICES	zookld.c	/^#define MAX_SERVICES /;"	d	file:
+PATH	Makefile	/^      PATH := $(PATH):\/usr\/sbin$/;"	m
+PBKDF2	zoobar/pbkdf2.py	/^class PBKDF2(object):$/;"	c
+PROGS	Makefile	/^PROGS   := zookld zookfs zookd \\$/;"	m
+Person	zoobar/zoodb.py	/^class Person(PersonBase):$/;"	c
+PersonBase	zoobar/zoodb.py	/^PersonBase = declarative_base()$/;"	v
+ProcessTimeout	zoobar/sandboxlib.py	/^class ProcessTimeout(threading.Thread):$/;"	c
+ProfileAPIServer	zoobar/profile-server.py	/^class ProfileAPIServer(rpclib.RpcServer):$/;"	c
+ProfileServer	zoobar/profile-server.py	/^class ProfileServer(rpclib.RpcServer):$/;"	c
+RpcClient	zoobar/rpclib.py	/^class RpcClient(object):$/;"	c
+RpcServer	zoobar/rpclib.py	/^class RpcServer(object):$/;"	c
+SHA1	zoobar/pbkdf2.py	/^        from hashlib import sha1 as SHA1$/;"	x
+SHA1	zoobar/pbkdf2.py	/^        import sha as SHA1$/;"	I
+SHA1	zoobar/pbkdf2.py	/^    from Crypto.Hash import HMAC, SHA as SHA1$/;"	x
+STRING	shellcode.S	/^#define STRING	/;"	d	file:
+STRLEN	shellcode.S	/^#define STRLEN	/;"	d	file:
+Sandbox	zoobar/sandboxlib.py	/^class Sandbox(object):$/;"	c
+Supporting the {{ adverbs|random }} {{ pluralnouns|random }} of the {{ concepts|random }}	zoobar/templates/layout.html	/^          {{ pluralnouns|random }} of the {{ concepts|random }}<\/h2>$/;"	i
+Transfer	zoobar/zoodb.py	/^class Transfer(TransferBase):$/;"	c
+TransferBase	zoobar/zoodb.py	/^TransferBase = declarative_base()$/;"	v
+User	zoobar/login.py	/^class User(object):$/;"	c
+ZOOK_CONF	zookld.c	/^#define ZOOK_CONF /;"	d	file:
+Zoobar Foundation for {{ adjectives|random }} {{ nouns|random }}	zoobar/templates/layout.html	/^                      {{ nouns|random }}<\/a><\/h1>$/;"	h
+_0xffffffffL	zoobar/pbkdf2.py	/^    _0xffffffffL = long(1) << 32$/;"	v
+__all__	zoobar/pbkdf2.py	/^__all__ = ['PBKDF2', 'crypt']$/;"	v
+__enter__	zoobar/rpclib.py	/^    def __enter__(self):$/;"	m	class:RpcClient
+__exit__	zoobar/rpclib.py	/^    def __exit__(self, *args):$/;"	m	class:RpcClient
+__f	zoobar/pbkdf2.py	/^    def __f(self, i):$/;"	m	class:PBKDF2	file:
+__init__	zoobar/login.py	/^    def __init__(self):$/;"	m	class:User
+__init__	zoobar/pbkdf2.py	/^    def __init__(self, passphrase, salt, iterations=1000,$/;"	m	class:PBKDF2
+__init__	zoobar/profile-server.py	/^    def __init__(self, user, visitor):$/;"	m	class:ProfileAPIServer
+__init__	zoobar/rpclib.py	/^    def __init__(self, sock):$/;"	m	class:RpcClient
+__init__	zoobar/sandboxlib.py	/^    def __init__(self, dir, uid, lockfile, timeout=5.0):$/;"	m	class:Sandbox
+__init__	zoobar/sandboxlib.py	/^    def __init__(self, pid, timeout):$/;"	m	class:ProcessTimeout
+__tablename__	zoobar/zoodb.py	/^    __tablename__ = "person"$/;"	v	class:Person	file:
+__tablename__	zoobar/zoodb.py	/^    __tablename__ = "transfer"$/;"	v	class:Transfer	file:
+__try	zoobar/debug.py	/^    def __try(*args, **kwargs):$/;"	f	function:catch_err	file:
+__version__	zoobar/pbkdf2.py	/^__version__ = "1.3"$/;"	v
+_b2a_hex	zoobar/pbkdf2.py	/^    from binascii import b2a_hex as _b2a_hex$/;"	x
+_b64encode	zoobar/pbkdf2.py	/^    from base64 import b64encode as _b64encode$/;"	x
+_makesalt	zoobar/pbkdf2.py	/^def _makesalt():$/;"	f
+_pseudorandom	zoobar/pbkdf2.py	/^    def _pseudorandom(self, key, msg):$/;"	m	class:PBKDF2
+_setup	zoobar/pbkdf2.py	/^    def _setup(self, passphrase, salt, iterations, prf):$/;"	m	class:PBKDF2
+addRegistration	zoobar/login.py	/^    def addRegistration(self, username, password):$/;"	m	class:User
+all	Makefile	/^all: $(PROGS)$/;"	t
+amount	zoobar/zoodb.py	/^    amount = Column(Integer)$/;"	v	class:Transfer
+ans	check-bugs.py	/^    ans = parse(sys.argv[1])$/;"	v
+app	zoobar/__init__.py	/^app = Flask(__name__)$/;"	v
+b	zoobar/pbkdf2.py	/^    def b(s):$/;"	f
+b2a_hex	zoobar/pbkdf2.py	/^    def b2a_hex(s):$/;"	f
+b64encode	zoobar/pbkdf2.py	/^    def b64encode(data, chars="+\/"):$/;"	f
+balance	zoobar/bank.py	/^def balance(username):$/;"	f
+bin-tar-gz	Makefile	/^bin-tar-gz: zookld zookfs-exstack zookd-exstack zookfs-nxstack zookd-nxstack$/;"	t
+binxor	zoobar/pbkdf2.py	/^    def binxor(a, b):$/;"	f
+body	zoobar/media/zoobar.css	/^body { $/;"	s
+buffered_readlines	zoobar/rpclib.py	/^def buffered_readlines(sock):$/;"	f
+build_exploit	exploit-template.py	/^def build_exploit(shellcode):$/;"	f
+call	zoobar/rpclib.py	/^    def call(self, method, **kwargs):$/;"	m	class:RpcClient
+callable	zoobar/pbkdf2.py	/^    def callable(obj):$/;"	f
+calladdr	shellcode.S	/^ calladdr:$/;"	l
+catch_err	zoobar/debug.py	/^def catch_err(f):$/;"	f
+cgi_gid	http.c	/^static int cgi_gid = -1;$/;"	v	typeref:typename:int	file:
+cgi_uid	http.c	/^static int cgi_uid = -1;$/;"	v	typeref:typename:int	file:
+check	Makefile	/^check: check-zoobar check-bugs check-crash check-exstack check-libc$/;"	t
+check	z_client.py	/^def check():$/;"	f
+check-bugs	Makefile	/^check-bugs:$/;"	t
+check-crash	Makefile	/^check-crash: bin.tar.gz exploit-2a.py exploit-2b.py shellcode.bin$/;"	t
+check-exstack	Makefile	/^check-exstack: bin.tar.gz exploit-3.py shellcode.bin$/;"	t
+check-libc	Makefile	/^check-libc: bin.tar.gz exploit-4a.py exploit-4b.py shellcode.bin$/;"	t
+check-zoobar	Makefile	/^check-zoobar:$/;"	t
+checkCookie	zoobar/login.py	/^    def checkCookie(self, cookie):$/;"	m	class:User
+checkLogin	zoobar/login.py	/^    def checkLogin(self, username, password):$/;"	m	class:User
+check_ex0	check_zoobar.py	/^def check_ex0():$/;"	f
+check_token	zoobar/auth.py	/^def check_token(username, token):$/;"	f
+check_token	zoobar/auth_client.py	/^def check_token(username, token):$/;"	f
+check_zoobars	z_client.py	/^def check_zoobars(html, user, zoobars, zmsg):$/;"	f
+child	zoobar/sandboxlib.py	/^    def child(self, func):$/;"	m	class:Sandbox
+clean	Makefile	/^clean:$/;"	t
+cleanup	check-part2.sh	/^cleanup() {$/;"	f
+cleanup	check-part3.sh	/^cleanup() {$/;"	f
+client_connect	zoobar/rpclib.py	/^def client_connect(pathname):$/;"	f
+close	zoobar/pbkdf2.py	/^    def close(self):$/;"	m	class:PBKDF2
+close	zoobar/rpclib.py	/^    def close(self):$/;"	m	class:RpcClient
+cmd	zoobar/zoodb.py	/^    cmd = sys.argv[1]$/;"	v
+crypt	zoobar/pbkdf2.py	/^def crypt(word, salt=None, iterations=None):$/;"	f
+dbsetup	zoobar/zoodb.py	/^def dbsetup(name, base):$/;"	f
+dir_join	http.c	/^void dir_join(char *dst, const char *dirname, const char *filename, int dst_size) {$/;"	f	typeref:typename:void
+disable_xss_protection	zoobar/__init__.py	/^def disable_xss_protection(response):$/;"	f
+div	zoobar/templates/zoobars.js	/^var div = document.getElementById("myZoobars");$/;"	v
+echo	zoobar/echo.py	/^def echo():$/;"	f
+env_deserialize	http.c	/^void env_deserialize(char *env, size_t len)$/;"	f	typeref:typename:void
+fdprintf	http.c	/^void fdprintf(int fd, char *fmt, ...)$/;"	f	typeref:typename:void
+file_read	check_zoobar.py	/^def file_read(pn):$/;"	f
+file_read	z_client.py	/^def file_read(pn):$/;"	f
+file_write	z_client.py	/^def file_write(pn, data):$/;"	f
+format_req	zoobar/rpclib.py	/^def format_req(method, kwargs):$/;"	f
+format_resp	zoobar/rpclib.py	/^def format_resp(resp):$/;"	f
+get	z_client.py	/^def get(url, cookies):$/;"	f
+get_log	zoobar/bank.py	/^def get_log(username):$/;"	f
+gids	zookld.c	/^static gid_t gids[MAX_GIDS];$/;"	v	typeref:typename:gid_t[]	file:
+green	check_zoobar.py	/^def green(s):$/;"	f
+group_parse_cb	zookld.c	/^static int group_parse_cb(const char *gid_str, int len, void *arg)$/;"	f	typeref:typename:int	file:
+h1	zoobar/media/zoobar.css	/^h1 { margin: 0em 100px 0em 100px; }$/;"	s
+h1	zoobar/media/zoobar.css	/^h1, h2, h1 a { text-align: center; color: #555555; }$/;"	s
+h1 a	zoobar/media/zoobar.css	/^h1 a { text-decoration: none; }$/;"	s
+h1 a	zoobar/media/zoobar.css	/^h1, h2, h1 a { text-align: center; color: #555555; }$/;"	s
+h2	zoobar/media/zoobar.css	/^h1, h2, h1 a { text-align: center; color: #555555; }$/;"	s
+h2	zoobar/media/zoobar.css	/^h2 { margin: 0em 1em 1em 1em; font-size: 1em; }$/;"	s
+hexread	zoobar/pbkdf2.py	/^    def hexread(self, octets):$/;"	m	class:PBKDF2
+http_err	http.c	/^void http_err(int fd, int code, char *fmt, ...)$/;"	f	typeref:typename:void
+http_read_line	http.c	/^int http_read_line(int fd, char *buf)$/;"	f	typeref:typename:int
+http_request_headers	http.c	/^const char *http_request_headers(int fd)$/;"	f	typeref:typename:const char *
+http_request_line	http.c	/^const char *http_request_line(int fd, char *reqpath, size_t reqpath_len, char *env, size_t *env_/;"	f	typeref:typename:const char *
+http_serve	http.c	/^void http_serve(int fd, const char *name)$/;"	f	typeref:typename:void
+http_serve_directory	http.c	/^void http_serve_directory(int fd, const char *pn) {$/;"	f	typeref:typename:void
+http_serve_executable	http.c	/^void http_serve_executable(int fd, const char *pn)$/;"	f	typeref:typename:void
+http_serve_file	http.c	/^void http_serve_file(int fd, const char *pn)$/;"	f	typeref:typename:void
+http_serve_none	http.c	/^void http_serve_none(int fd, const char *pn)$/;"	f	typeref:typename:void
+http_set_executable_uid_gid	http.c	/^http_set_executable_uid_gid(int uid, int gid)$/;"	f	typeref:typename:void
+id	zoobar/zoodb.py	/^    id = Column(Integer, primary_key=True)$/;"	v	class:Transfer
+index	zoobar/index.py	/^def index():$/;"	f
+isbytes	zoobar/pbkdf2.py	/^    def isbytes(s):$/;"	f
+isinteger	zoobar/pbkdf2.py	/^    def isinteger(n):$/;"	f
+isunicode	zoobar/pbkdf2.py	/^    def isunicode(s):$/;"	f
+kill	zoobar/sandboxlib.py	/^    def kill(self):$/;"	m	class:ProcessTimeout
+killall	check_zoobar.py	/^def killall():$/;"	f
+lab%-handin.tar.gz	Makefile	/^lab%-handin.tar.gz: clean$/;"	t
+launch_svc	zookld.c	/^pid_t launch_svc(CONF *conf, const char *name)$/;"	f	typeref:typename:pid_t
+log	check_zoobar.py	/^def log(*m):$/;"	f
+log	zoobar/debug.py	/^def log(msg):$/;"	f
+log_exit	check_zoobar.py	/^def log_exit(*m):$/;"	f
+logged_in	zoobar/login.py	/^def logged_in():$/;"	f
+login	z_client.py	/^def login(user, password):$/;"	f
+login	zoobar/auth.py	/^def login(username, password):$/;"	f
+login	zoobar/auth_client.py	/^def login(username, password):$/;"	f
+login	zoobar/login.py	/^def login():$/;"	f
+loginCookie	zoobar/login.py	/^    def loginCookie(self, username, token):$/;"	m	class:User
+login_page	z_client.py	/^def login_page(op, user, password):$/;"	f
+loginhelper	zoobar/login.py	/^    def loginhelper(*args, **kwargs):$/;"	f	function:requirelogin	file:
+logout	zoobar/login.py	/^    def logout(self):$/;"	m	class:User
+logout	zoobar/login.py	/^def logout():$/;"	f
+main	check_zoobar.py	/^def main():$/;"	f
+main	run-shellcode.c	/^main(int ac, char **av)$/;"	f	typeref:typename:int
+main	shellcode.S	/^ main:$/;"	l
+main	zoobar/debug.py	/^def main():$/;"	f
+main	zookd.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	zookfs.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	zookld.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+myZoobars	zoobar/templates/zoobars.js	/^var myZoobars = {{ g.user.zoobars if g.user.zoobars > 0 else 0 }};$/;"	v
+newtoken	zoobar/auth.py	/^def newtoken(db, person):$/;"	f
+ngids	zookld.c	/^static int ngids = 0;$/;"	v	typeref:typename:int	file:
+nsvcs	zookd.c	/^static int nsvcs;$/;"	v	typeref:typename:int	file:
+nsvcs	zookld.c	/^static int nsvcs = 0; \/* actual number of services *\/$/;"	v	typeref:typename:int	file:
+parse	check-bugs.py	/^def parse(pn):$/;"	f
+parse_req	zoobar/rpclib.py	/^def parse_req(req):$/;"	f
+parse_resp	zoobar/rpclib.py	/^def parse_resp(resp):$/;"	f
+password	zoobar/zoodb.py	/^    password = Column(String(128))$/;"	v	class:Person
+person_setup	zoobar/zoodb.py	/^def person_setup():$/;"	f
+popladdr	shellcode.S	/^ popladdr:$/;"	l
+post	z_client.py	/^def post(url, cookies, postdata):$/;"	f
+prepare-submit	Makefile	/^prepare-submit: lab1-handin.tar.gz$/;"	t
+prepare-submit-a	Makefile	/^prepare-submit-a: lab1a-handin.tar.gz$/;"	t
+prepare-submit-b	Makefile	/^prepare-submit-b: lab1b-handin.tar.gz$/;"	t
+print_wget_log	z_client.py	/^def print_wget_log():$/;"	f
+process_client	zookd.c	/^static void process_client(int fd)$/;"	f	typeref:typename:void	file:
+profile	zoobar/zoodb.py	/^    profile = Column(String(5000), nullable=False, default="")$/;"	v	class:Person
+read	zoobar/pbkdf2.py	/^    def read(self, bytes):$/;"	m	class:PBKDF2
+recipient	zoobar/zoodb.py	/^    recipient = Column(String(128))$/;"	v	class:Transfer
+recvfd	http.c	/^ssize_t recvfd(int socket, void *buffer, size_t length, int *fd)$/;"	f	typeref:typename:ssize_t
+red	check_zoobar.py	/^def red(s):$/;"	f
+register	z_client.py	/^def register(user, password):$/;"	f
+register	zoobar/auth.py	/^def register(username, password):$/;"	f
+register	zoobar/auth_client.py	/^def register(username, password):$/;"	f
+req	exploit-template.py	/^    req = build_exploit(shellcode)$/;"	v
+requirelogin	zoobar/login.py	/^def requirelogin(page):$/;"	f
+resp	exploit-template.py	/^    resp = send_req(sys.argv[1], int(sys.argv[2]), req)$/;"	v
+rpc_echo	zoobar/echo-server.py	/^    def rpc_echo(self, s):$/;"	m	class:EchoRpcServer
+rpc_get_self	zoobar/profile-server.py	/^    def rpc_get_self(self):$/;"	m	class:ProfileAPIServer
+rpc_get_user_info	zoobar/profile-server.py	/^    def rpc_get_user_info(self, username):$/;"	m	class:ProfileAPIServer
+rpc_get_visitor	zoobar/profile-server.py	/^    def rpc_get_visitor(self):$/;"	m	class:ProfileAPIServer
+rpc_get_xfers	zoobar/profile-server.py	/^    def rpc_get_xfers(self, username):$/;"	m	class:ProfileAPIServer
+rpc_run	zoobar/profile-server.py	/^    def rpc_run(self, pcode, user, visitor):$/;"	m	class:ProfileServer
+rpc_xfer	zoobar/profile-server.py	/^    def rpc_xfer(self, target, zoobars):$/;"	m	class:ProfileAPIServer
+run	zoobar/sandboxlib.py	/^    def run(self):$/;"	m	class:ProcessTimeout
+run	zoobar/sandboxlib.py	/^    def run(self, func):$/;"	m	class:Sandbox
+run-shellcode	Makefile	/^run-shellcode: %: %.o$/;"	t
+run_profile	zoobar/profile-server.py	/^def run_profile(pcode, profile_api_client):$/;"	f
+run_profile	zoobar/profile.py	/^def run_profile(user):$/;"	f
+run_sock	zoobar/rpclib.py	/^    def run_sock(self, sock):$/;"	m	class:RpcServer
+run_sockpath_fork	zoobar/rpclib.py	/^    def run_sockpath_fork(self, sockpath):$/;"	m	class:RpcServer
+run_wget	z_client.py	/^def run_wget(opts=[]):$/;"	f
+s	zoobar/auth-server.py	/^s = AuthRpcServer()$/;"	v
+s	zoobar/echo-server.py	/^s = EchoRpcServer()$/;"	v
+s	zoobar/profile-server.py	/^s = ProfileServer()$/;"	v
+say_fail	check-bugs.py	/^def say_fail(reason):$/;"	f
+say_pass	check-bugs.py	/^def say_pass(reason):$/;"	f
+send_req	exploit-template.py	/^def send_req(host, port, req):$/;"	f
+sender	zoobar/zoodb.py	/^    sender = Column(String(128))$/;"	v	class:Transfer
+sendfd	http.c	/^ssize_t sendfd(int socket, const void *buffer, size_t length, int fd)$/;"	f	typeref:typename:ssize_t
+service_parse_cb	zookld.c	/^static int service_parse_cb(const char *name, int len, void *arg)$/;"	f	typeref:typename:int	file:
+setPerson	zoobar/login.py	/^    def setPerson(self, username, token):$/;"	m	class:User
+setup	check_zoobar.py	/^def setup():$/;"	f
+sh	check_zoobar.py	/^def sh(cmd, exit_onerr=True):$/;"	f
+shellcode	exploit-template.py	/^    shellcode = shellfile.read()$/;"	v
+split_path	http.c	/^void split_path(char *pn)$/;"	f	typeref:typename:void
+stack_buffer	exploit-template.py	/^stack_buffer = 0xdeadc0de$/;"	v
+stack_retaddr	exploit-template.py	/^stack_retaddr = stack_saved_ebp + 4$/;"	v
+stack_saved_ebp	exploit-template.py	/^stack_saved_ebp = 0xdeadc0de$/;"	v
+start_server	zookld.c	/^static int start_server(const char *portstr)$/;"	f	typeref:typename:int	file:
+stat_summary	check-bugs.py	/^def stat_summary(ans):$/;"	f
+svcfds	zookd.c	/^static int svcfds[MAX_SERVICES];$/;"	v	typeref:typename:int[]	file:
+svcfds	zookld.c	/^static int svcfds[MAX_SERVICES];$/;"	v	typeref:typename:int[]	file:
+svcnames	zookld.c	/^static char svcnames[MAX_SERVICES][256];$/;"	v	typeref:typename:char[][256]	file:
+svcurls	zookd.c	/^static regex_t svcurls[MAX_SERVICES];$/;"	v	typeref:typename:regex_t[]	file:
+thisdir	check_zoobar.py	/^thisdir = os.path.dirname(os.path.abspath(__file__))$/;"	v
+time	zoobar/zoodb.py	/^    time = Column(String)$/;"	v	class:Transfer
+token	zoobar/zoodb.py	/^    token = Column(String(128))$/;"	v	class:Person
+touch	http.c	/^void touch(const char *name) {$/;"	f	typeref:typename:void
+transfer	z_client.py	/^def transfer(sender_cookies, recipient, zoobars):$/;"	f
+transfer	zoobar/bank.py	/^def transfer(sender, recipient, zoobars):$/;"	f
+transfer	zoobar/transfer.py	/^def transfer():$/;"	f
+transfer_setup	zoobar/zoodb.py	/^def transfer_setup():$/;"	f
+url_decode	http.c	/^void url_decode(char *dst, const char *src, int dst_size)$/;"	f	typeref:typename:void
+username	zoobar/zoodb.py	/^    username = Column(String(128), primary_key=True)$/;"	v	class:Person
+users	zoobar/users.py	/^def users():$/;"	f
+valid_cgi_script	http.c	/^valid_cgi_script(struct stat *st)$/;"	f	typeref:typename:int	file:
+verbose	check_zoobar.py	/^verbose = False$/;"	v
+view_user	z_client.py	/^def view_user(cookies, username):$/;"	f
+wget_log	z_client.py	/^wget_log = []$/;"	v
+xrange	zoobar/pbkdf2.py	/^    xrange = range$/;"	v
+zoobarjs	zoobar/zoobarjs.py	/^def zoobarjs():$/;"	f
+zoobars	zoobar/zoodb.py	/^    zoobars = Column(Integer, nullable=False, default=10)$/;"	v	class:Person
+zook	zook-exstack.conf	/^[zook]$/;"	s
+zook	zook-nxstack.conf	/^[zook]$/;"	s
+zook	zook-withssp.conf	/^[zook]$/;"	s
+zook	zook.conf	/^[zook]$/;"	s
+zookd	Makefile	/^zookld zookd zookfs: %: %.o http.o$/;"	t
+zookd	zook-exstack.conf	/^[zookd]$/;"	s
+zookd	zook-nxstack.conf	/^[zookd]$/;"	s
+zookd	zook-withssp.conf	/^[zookd]$/;"	s
+zookd	zook.conf	/^[zookd]$/;"	s
+zookd-withssp	Makefile	/^zookfs-withssp zookd-withssp: %: %.o http-withssp.o$/;"	t
+zookfs	Makefile	/^zookld zookd zookfs: %: %.o http.o$/;"	t
+zookfs-withssp	Makefile	/^zookfs-withssp zookd-withssp: %: %.o http-withssp.o$/;"	t
+zookfs_svc	zook-exstack.conf	/^[zookfs_svc]$/;"	s
+zookfs_svc	zook-nxstack.conf	/^[zookfs_svc]$/;"	s
+zookfs_svc	zook-withssp.conf	/^[zookfs_svc]$/;"	s
+zookfs_svc	zook.conf	/^[zookfs_svc]$/;"	s
+zookld	Makefile	/^zookld zookd zookfs: %: %.o http.o$/;"	t

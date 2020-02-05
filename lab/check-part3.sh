@@ -1,5 +1,4 @@
 #!/bin/bash
-
 HOST=localhost
 PORT=8080
 GRAD=/home/httpd/grades.txt

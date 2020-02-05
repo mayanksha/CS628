@@ -45,8 +45,9 @@ int main(int argc, char **argv)
             /* get all headers */
             if ((errmsg = http_request_headers(sockfd)))
                 http_err(sockfd, 500, "http_request_headers: %s", errmsg);
-            else
-                http_serve(sockfd, getenv("REQUEST_URI"));
+            else {
+              http_serve(sockfd, getenv("REQUEST_URI"));
+            }
             return 0;
         default: /* parent */
             close(sockfd);

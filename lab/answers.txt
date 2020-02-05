@@ -1,1 +1,97 @@
-## Place your answers here.
+Exercise: 2
+===========
+
+
+[exploit-2a.py]
+
+    The buffer overflow here is because of overwriting the return address in http_request_line function. This function is passed a buffer of 4096 bytes without any length parameter. 
+    Furthermore, http_read_line function reads the buffer using an infinite loop. So, when we supply any sufficiently large buffer length, the code in zookd is sure to crash owing to stack smashing.
+
+~~~~~~~~~~
+
+[exploit-2b.py]
+
+    Here, we use the method to overwrite some other variable's value using a buffer overflow. In function http_serve, we are passing name (char *). Nowhere in the function do we use (or check) the length of this buffer. 
+
+    Also, in http_serve, we're allocating a buffer pn (of size 1024 bytes) and then we're using strcat directly with name. Since, name buffer can be arbitrarily long (actually name is also limited by a max length of 2048 bytes because of reqpath), we can concatenate them and the resulting buffer pn's size can be much larger than 1024, thereby causing a seg-fault (because of overwriting return address).
+
+Exercise: 3 
+===========
+
+In this, I'm using the buffer overflow which I found in Part 2A to exploit the vulnerability in the server. I have crafted my payload in such a manner such that it overflows the buffer and I've kept track of the place (address) where the shellcode exists. 
+
+So, this address is put into the position of previous function's saved eip (just below saved ebp). The relevant shell code which I wrote in assembly is:
+
+    xor     eax, eax    ;Clearing eax register
+    push    eax         ;Pushing NULL bytes
+    push 0x7478742e     ;This is just pushing the string "/bin//rm /home/httpd///grades.txt"
+    push 0x73656461     ;
+    push 0x72672f2f     ;
+    push 0x64707474     ;
+    push 0x682f656d     ;
+    push 0x6f682f20     ;
+    push 0x6d722f2f     ;
+    push 0x6e69622f     ;
+    mov     ebx, esp    ;ebx now has address of /home/httpd///grades.txt
+    push    eax         ;Pushing NULL byte
+    mov     edx, esp    ;edx now has address of NULL byte
+    push    ebx         ;Pushing address of /home/httpd///grades.txt
+    mov     ecx, esp    ;ecx now has address of address
+                        ;of /home/httpd///grades.txt byte
+    mov     al, 11      ;syscall number of execve is 11
+    add     al, -1      ;         
+    int     0x80        ;
+
+I've used the nasm compiler to compile an object file and then extracted shell code from this. This exploit unlinks the file grades.txt present on system.
+
+Exercise: 4 
+===========
+
+[exploit-4a.py]
+
+    The buffer overflow here is because of overwriting the return address in http_request_line function. This function is passed a buffer of 4096 bytes without any length parameter. 
+    Furthermore, http_read_line function reads the buffer using an infinite loop. So, when we supply any sufficiently large buffer length, the code in zookd is sure to crash owing to stack smashing.
+
+** Return to libc Attack explanation: 
+    
+    The main string here (attack payload string) is "/bin//rm /home/httpd///grades.txt". The main problem here is we can't simply insert space character in the request. This is because such space characters are used to terminate either sp1 or sp2 in http_request_line function. So, the spaces are url encoded to a "+" instead of a " ".
+
+    Also, when we overflow the buf buffer in http_request_line  function, we have to supply the payload such that we maintain the addresses of envp and env_len to some sane value. This is because these variables are later de-referenced and if the point to a memory region out of stack, they can cause a seg-fault.
+
+    We add padding to wherever needed to 4 byte align the stack addresses and place the address of "system" libc function at the return eip of http_request_line. This executes the return-to-libc attack successfully.
+
+~~~~~~~~~~
+
+[exploit-4b.py]
+
+    Here, we use the method to overwrite some other variable's value using a buffer overflow. In function http_serve, we are passing name (char *). Nowhere in the function do we use (or check) the length of this buffer. 
+
+    Also, in http_serve, we're allocating a buffer pn (of size 1024 bytes) and then we're using strcat directly with name. Since, name buffer can be arbitrarily long (actually name is also limited by a max length of 2048 bytes because of reqpath), we can concatenate them and the resulting buffer pn's size can be much larger than 1024, thereby causing a seg-fault (because of overwriting return address).
+
+** Return to libc Attack explanation: 
+
+    The attacker controls the name variable using the HTTP Request he sends. So, tinkering with it in gdb reveals that handler's value can be changed. Since, handler is a function pointer and if we properly place the buffer in name such that we overwrite handler with the address of "system", and place the string "/bin//rm /home/httpd///grades.txt" somewhere, and then properly write the address of this string, we can execute a return-to-libc attack. 
+
+    The most difficult part in this part is to place the string "/bin//rm /home/httpd///grades.txt" at a value where we have the freedom to write a null character at the end so as to terminate the string. 
+    The http_request_line function ensures that we aren't able to write a null character anywhere between request path and start of buffer. 
+    So, we use HTTP Headers to store this string somewhere in memory and use the address of this string to pass as an argument to "system" libc function.
+
+    I have used the line <overflow_header = "Accept: " + system_arg_string  + "\r\n"> where system_arg_string contains the attack payload string. This is stored in value buffer (of size 1024) in http_request_headers function.
+
+
+Exercise: 5 
+===========
+
+1. Lack of proper error handling and input sanitization can cause the server to crash repeatedly. For high load scenarios, this is highly taxing on the system since each time the server crashes, we have to restart a new process which's costly. 
+    An attacker and repeated crash this server because of the numerous vulnerabilities present in it effectively DDoS'ing  the service.
+
+    This can be mitigated by having a main thread which spawns other worker threads. The other worker threads may die anytime keeping the main thread unaffected and ready to server other benign users.
+
+2. Lack of Privilege escalation in various components of service. The server isn't run in a chrooted environment and has access to all the system resources. An attacker can frame the payload in such a manner that he can read all the files to which he's the privilege and even beyong.
+    To counter such a problem, we can use a jail kit (or run the server in a container or inside a chrooted environment). This ensures that even though the server is compromised, no information from outside the jail is readable by the attacker.
+
+Exercise: 6 
+===========
+
+The file changes.patch has been added which mentions all the changes which have been made to the files
+

@@ -3,15 +3,46 @@
 # desc
 #
 
-[zookd.c:1234]
-description goes here. for example, the 'buf' variable can be
-overwritten by the 'msg' variable because ...
+[http.c:65] 
+The allocated buffer (buf) has a size of 4096 bytes but the http_read_line function runs an infinite loop to read as many bytes as needed. This will over the buf buffer and will lead to stack smashing and eventual seg-fault.
 
-    <paste offending line(s) of code here>
+Relevant request to Crash the server:
 
-[http.c:1234]
-another description.
+    req =  "GET%s /bugs.txt HTTP/1.0\r\n\r\n" % (''*4500)
 
-    <paste offending line(s) of code here>
 
-# many more come here
+[http.c:274]
+strcat function will concatenate pn buffer with name and store the result in name. Now, if we give name to be long enough, we can overflow the buffer pn because we control the length of the buffer name. This crashes the zookfs-exstack process.
+
+<strcat(pn, name);>
+Here, we can overwrite the location where handler is stored, and hence change the value of handler 
+    num = 900 + 27 * 4 + 50 
+    req =  "GET /answers.txt/%s HTTP/1.0\r\n\r\n"  % ("a"*num)
+    return req
+
+[http.c:119] 
+The allocated buffer (buf) has a size of 4096 bytes but the for loop in line 119 runs infinitely. Furthermore, the http_read_line function takes no size parameter and while parsing the HTTP Headers in http_request_headers function, the overflown buffer will cause a seg-fault at the time of return.
+
+When the buffer is overflown this time, the zookfs-exstack gets crashed instead of the zookd-exstack process. Hence, no "Success" is shown but analysis in gdb does show a seg-fault ocurring due to stack smashing.
+
+Relevant request to Crash the server:
+req =  "GET /answers.txt HTTP/1.0\r\n"
+overflow_header = "Accept: " + "a"*4200 + "\x90"*100 + "\r\n"
+req += overflow_header 
+req += "\r\n"
+return req
+
+[http.c:304] 
+sprintf in line 304 can be used to crash  the server. This is because there's no check on the length of the resultting buffer (buf) and the concatenatation of the buffer pn and char pointer returned by getenv("PATH_INFO") and be arbitrarily long. Hence's we have a buffer overflow vulnerability here.
+
+<sprintf(buf, "%s%s", pn, getenv("PATH_INFO"))>
+
+[http.c:474] 
+In function env_deserialize, we're using sprintf to concatenate strings "GATEWAY_INTERFACE=CGI/1.1" and "REDIRECT_STATUS=200" to envp buffer. If the size of envp buffer is sufficiently large, the buffer may overflow causing the program to crash.
+
+    <envp += sprintf(envp, "GATEWAY_INTERFACE=CGI/1.1") + 1;>
+    <envp += sprintf(envp, "REDIRECT_STATUS=200") + 1;>
+
+[http.c:397]
+Inside http_serve_executable function, we're again calling the function http_read_line without and storing the read contents of socket into the buffer (buf). If we give a sufficiently large value, we can overflow the buf buffer and smash the stack.
+
