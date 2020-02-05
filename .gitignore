@@ -1,0 +1,11 @@
+*.o
+*.out
+*.pyc
+lab/zookfs-exstack
+lab/zookfs-nxstack
+lab/zookd-exstack
+lab/zookd-nxstack
+lab/zookd-withssp
+lab/zookld
+lab/zookd
+lab/exstack
